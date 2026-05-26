@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olena Storozheva — Product Designer · B2B SaaS</title>
+<meta name="description" content="Olena Storozheva is a Product Designer with 4+ years crafting accessible, data-heavy interfaces for B2B SaaS platforms. Specializing in Figma, design systems, and cross-functional collaboration.">
+<meta property="og:title" content="Olena Storozheva — Product Designer">
+<meta property="og:description" content="4+ years designing B2B SaaS platforms. Figma · Design Systems · Enterprise UX.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://olenastorozheva.github.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0b0b0e;
+--bg2:#13131a;
+--bg3:#1c1c26;
+--accent:#4f8ef7;
+--accent2:#7ba8f8;
+--text:#e8e8f0;
+--text2:#9a9ab0;
+--text3:#5c5c72;
+--border:#2a2a3a;
+--border2:#3a3a50;
+--font-display:'Syne',sans-serif;
+--font-body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 clamp(1.5rem,5vw,4rem);height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,11,14,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-burger span{width:22px;height:1.5px;background:var(--text2);display:block;transition:.3s}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:var(--bg2);padding:1.5rem clamp(1.5rem,5vw,4rem);border-bottom:1px solid var(--border);z-index:99}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;padding:.75rem 0;color:var(--text2);text-decoration:none;font-size:1rem;border-bottom:1px solid var(--border)}
+.nav-mobile a:last-child{border-bottom:none}
+
+/* SECTIONS */
+section{padding:clamp(64px,10vw,120px) clamp(1.5rem,5vw,4rem)}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.15;letter-spacing:-.03em;color:var(--text);margin-bottom:2rem}
+
+/* HERO */
+#hero{padding-top:calc(64px + clamp(64px,10vw,120px));min-height:100svh;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;width:100%}
+.hero-left{}
+.hero-eyebrow{font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--accent)}
+.hero-name{font-family:var(--font-display);font-size:clamp(3rem,8vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-.05em;color:var(--text);margin-bottom:1rem}
+.hero-name em{color:var(--accent);font-style:normal}
+.hero-role{font-family:var(--font-display);font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:400;color:var(--text2);margin-bottom:1.5rem;letter-spacing:-.01em}
+.hero-pitch{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--text2);max-width:58ch;line-height:1.75;margin-bottom:2.5rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:6px;font-family:var(--font-body);font-size:.875rem;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.hero-avatar{width:clamp(160px,20vw,220px);height:clamp(160px,20vw,220px);border-radius:50%;background:var(--bg3);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
+.hero-monogram{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:var(--accent);letter-spacing:-.05em;line-height:1}
+.avatar-ring{position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--accent);opacity:.25;animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.35;transform:scale(1.04)}}
+
+/* ABOUT */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--text2);margin-bottom:1.25rem;line-height:1.8;font-size:1rem}
+.about-text p:last-child{margin-bottom:0}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.25rem}
+.stat-num{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.35rem;letter-spacing:-.04em}
+.stat-label{font-size:.8rem;color:var(--text3);line-height:1.4;text-transform:uppercase;letter-spacing:.06em}
+
+/* SKILLS */
+#skills{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skill-group{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+.skill-group-title{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-size:.8rem;padding:.3rem .7rem;border-radius:4px;border:1px solid var(--border2);color:var(--text2);transition:all .15s}
+.tag.primary{border-color:var(--accent);color:var(--accent);background:rgba(79,142,247,.08)}
+.tag:hover{border-color:var(--border2);color:var(--text)}
+
+/* PROJECTS */
+#projects{background:var(--bg)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.project-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.project-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.project-card:hover::before{transform:scaleX(1)}
+.project-num{font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--text3);text-transform:uppercase}
+.project-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.3}
+.project-meta{display:flex;flex-direction:column;gap:.75rem;flex:1}
+.meta-row{display:flex;flex-direction:column;gap:.2rem}
+.meta-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:.7}
+.meta-text{font-size:.875rem;color:var(--text2);line-height:1.65}
+.project-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.ptag{font-size:.72rem;padding:.2rem .55rem;border-radius:3px;background:var(--bg2);color:var(--text3);border:1px solid var(--border)}
+
+/* EXPERIENCE */
+#experience{background:var(--bg2)}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:160px 1px 1fr;gap:0 2rem;position:relative}
+.tl-date{padding:1.75rem 0;text-align:right}
+.tl-date-range{font-size:.8rem;font-weight:500;color:var(--accent);line-height:1.4}
+.tl-date-label{font-size:.7rem;color:var(--text3);margin-top:.2rem}
+.tl-line{background:var(--border);position:relative}
+.tl-line::before{content:'';position:absolute;top:2rem;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg2);box-shadow:0 0 0 3px rgba(79,142,247,.2)}
+.tl-body{padding:1.75rem 0 2.5rem}
+.tl-company{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.tl-role{font-size:.875rem;color:var(--accent);margin:.2rem 0 .75rem;font-weight:500}
+.tl-desc{font-size:.9rem;color:var(--text2);line-height:1.75;max-width:65ch}
+.tl-desc li{margin-left:1.2rem;margin-top:.4rem}
+.tl-desc li::marker{color:var(--accent)}
+
+/* EDUCATION */
+#education{background:var(--bg)}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.edu-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+.edu-degree{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.3rem;letter-spacing:-.01em}
+.edu-school{font-size:.875rem;color:var(--text2);margin-bottom:.5rem}
+.edu-year{font-size:.75rem;color:var(--text3);font-weight:500;letter-spacing:.05em}
+
+/* CONTACT */
+#contact{background:var(--bg2)}
+.contact-inner{max-width:640px}
+.contact-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;color:var(--text);margin-bottom:1.25rem}
+.contact-title em{color:var(--accent);font-style:normal}
+.contact-sub{font-size:1rem;color:var(--text2);max-width:50ch;line-height:1.75;margin-bottom:2.5rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:3rem}
+.contact-list{display:flex;flex-direction:column;gap:.75rem}
+.contact-item{display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text2)}
+.contact-item a{color:var(--text2);text-decoration:none;transition:color .2s}
+.contact-item a:hover{color:var(--accent)}
+.contact-icon{width:18px;height:18px;flex-shrink:0;color:var(--accent)}
+
+/* FOOTER */
+footer{padding:1.5rem clamp(1.5rem,5vw,4rem);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:gap:1rem}
+.footer-note{font-size:.8rem;color:var(--text3)}
+
+/* FADE IN */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav-links{display:none}
+.nav-burger{display:flex}
+.hero-grid{grid-template-columns:1fr;gap:2rem}
+.hero-avatar{width:110px;height:110px;order:-1}
+.hero-name{font-size:clamp(2.5rem,12vw,3.5rem)}
+.about-grid{grid-template-columns:1fr;gap:2.5rem}
+.tl-item{grid-template-columns:90px 1px 1fr;gap:0 1rem}
+.tl-date-range{font-size:.72rem}
+footer{flex-direction:column;gap:.5rem;text-align:center}
+}
+@media(max-width:480px){
+.about-stats{grid-template-columns:1fr 1fr}
+.hero-ctas{flex-direction:column}
+.btn{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Olena<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#projects" onclick="toggleMenu()">Work</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="section-inner">
+    <div class="hero-grid">
+      <div class="hero-left fade-up">
+        <div class="hero-eyebrow">Product Designer · B2B SaaS</div>
+        <h1 class="hero-name">Olena<br><em>Storozheva</em></h1>
+        <p class="hero-role">Designing systems that make complex workflows feel simple</p>
+        <p class="hero-pitch">4+ years crafting accessible, data-heavy interfaces for enterprise and SaaS platforms. I bridge the gap between abstract requirements and pixel-perfect screens — working closely with product managers, developers, and stakeholders to ship experiences that actually move metrics.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            Get in touch
+          </a>
+          <a href="https://www.linkedin.com/in/olena-storozheva-807948137" target="_blank" class="btn btn-outline">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/olenastorozheva" target="_blank" class="btn btn-outline">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-avatar fade-up" style="transition-delay:.15s">
+        <div class="avatar-ring"></div>
+        <div class="hero-monogram">OS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Turning workflow complexity into clarity</h2>
+        <p>I'm a UX/UI and Product Designer based in Ukraine, specializing in B2B SaaS and enterprise platforms. For the past 4+ years at Nix Solutions, I've owned the end-to-end design of an RPA platform — a product where precision, accessibility, and design-system discipline aren't optional extras, they're the baseline.</p>
+        <p>My approach is rooted in <strong style="color:var(--text);font-weight:500">systems thinking</strong>: I don't just design screens, I design the logic that connects them. Whether I'm mapping task flows, running usability tests, or refining component libraries in Figma, I'm always asking: "How does this fit the system, and does it make someone's workday easier?"</p>
+        <p>I work fluidly across cross-functional teams — translating requirements from stakeholders and product managers into high-fidelity, developer-ready designs. I take feedback well, iterate fast, and can plan and monitor my own workstreams without needing constant direction.</p>
+        <p>Before UX, I spent years in graphic and brand design. That foundation shows up in my attention to visual craft — the kind of detail that separates a good interface from a memorable one.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Years in B2B SaaS UX</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">RPA</div>
+          <div class="stat-label">Enterprise Platform Domain</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">W3C</div>
+          <div class="stat-label">Accessibility Standards</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">EN</div>
+          <div class="stat-label">Fluent English (written + spoken)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label fade-up">Skills</div>
+    <h2 class="section-title fade-up">Design toolkit</h2>
+    <div class="skills-grid fade-up">
+      <div class="skill-group">
+        <div class="skill-group-title">Core Design Tools</div>
+        <div class="skill-tags">
+          <span class="tag primary">Figma</span>
+          <span class="tag primary">Auto-layout</span>
+          <span class="tag primary">Components</span>
+          <span class="tag primary">Prototyping</span>
+          <span class="tag">Sketch</span>
+          <span class="tag">Framer</span>
+          <span class="tag">InVision</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">UX Process</div>
+        <div class="skill-tags">
+          <span class="tag primary">Design Systems</span>
+          <span class="tag primary">Wireframing</span>
+          <span class="tag primary">Task Flows</span>
+          <span class="tag">Usability Testing</span>
+          <span class="tag">Heuristic Analysis</span>
+          <span class="tag">Competitive Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Accessibility & Standards</div>
+        <div class="skill-tags">
+          <span class="tag primary">W3C Accessibility</span>
+          <span class="tag">WCAG</span>
+          <span class="tag">Interaction Design</span>
+          <span class="tag">Responsive Design</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Creative Suite</div>
+        <div class="skill-tags">
+          <span class="tag">Adobe Photoshop</span>
+          <span class="tag">Illustrator</span>
+          <span class="tag">InDesign</span>
+          <span class="tag">Brand Identity</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Collaboration & Soft Skills</div>
+        <div class="skill-tags">
+          <span class="tag primary">Cross-functional Collaboration</span>
+          <span class="tag">Stakeholder Communication</span>
+          <span class="tag">Iterative Design</span>
+          <span class="tag">Self-management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label fade-up">Featured Work</div>
+    <h2 class="section-title fade-up">Selected projects</h2>
+    <div class="projects-grid fade-up">
+
+      <div class="project-card">
+        <div class="project-num">01 · Lead Project</div>
+        <div class="project-title">RPA Platform UX — Digital Workforce Management</div>
+        <div class="project-meta">
+          <div class="meta-row">
+            <span class="meta-label">Problem</span>
+            <span class="meta-text">Enterprise users managing complex RPA workflows through a dense, unintuitive interface — high cognitive load, steep onboarding curve for non-technical operators.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Solution</span>
+            <span class="meta-text">Redesigned the information architecture and component system in Figma, establishing a scalable design system that unified workflows across the platform. Introduced progressive disclosure patterns and accessible UI for data-heavy dashboards.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Impact</span>
+            <span class="meta-text">Shipped across multiple releases; pixel-perfect handoff reduced dev QA cycles. Accessibility compliance brought the platform to W3C standards.</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">Figma</span>
+          <span class="ptag">Design System</span>
+          <span class="ptag">B2B SaaS</span>
+          <span class="ptag">Accessibility</span>
+          <span class="ptag">RPA</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <div class="project-title">Workflow Automation — Task Flow Redesign</div>
+        <div class="project-meta">
+          <div class="meta-row">
+            <span class="meta-label">Problem</span>
+            <span class="meta-text">Operators creating and managing automated workflows lacked clear visual feedback on execution states, causing errors and requiring developer intervention.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Solution</span>
+            <span class="meta-text">Mapped end-to-end task flows with stakeholders, designed a new state-machine visualization with clear status indicators. Used interactive Figma prototypes to validate with users before development.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Impact</span>
+            <span class="meta-text">Prototype-first approach aligned developers and product managers early, reducing design revision rounds and accelerating handoff.</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">Figma</span>
+          <span class="ptag">Prototyping</span>
+          <span class="ptag">Task Flows</span>
+          <span class="ptag">Enterprise UX</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <div class="project-title">Brand Identity Suite — Multi-client Graphic Design</div>
+        <div class="project-meta">
+          <div class="meta-row">
+            <span class="meta-label">Problem</span>
+            <span class="meta-text">Clients in cosmetics, wine, and retail needed cohesive visual identities from scratch — logos, print-ready materials, and brand guidelines on tight timelines.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Solution</span>
+            <span class="meta-text">Delivered end-to-end brand identity work: from initial concept and logo design to final print-ready assets. Worked directly with client briefs and printing services across Classy Workshop and self-employed projects.</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Impact</span>
+            <span class="meta-text">Built visual literacy and client communication skills that now directly inform stakeholder presentations and design rationale in product work.</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">Adobe Suite</span>
+          <span class="ptag">Brand Identity</span>
+          <span class="ptag">InDesign</span>
+          <span class="ptag">Print Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label fade-up">Experience</div>
+    <h2 class="section-title fade-up">Career timeline</h2>
+    <div class="timeline fade-up">
+
+      <div class="tl-item">
+        <div class="tl-date">
+          <div class="tl-date-range">Mar 2021 — Present</div>
+          <div class="tl-date-label">~4 years</div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <div class="tl-company">Nix Solutions</div>
+          <div class="tl-role">UX/UI Designer</div>
+          <ul class="tl-desc">
+            <li>Owning end-to-end design of an RPA SaaS platform — from discovery to pixel-perfect delivery — across the full digital workforce management lifecycle</li>
+            <li>Building and maintaining a scalable Figma design system (components, auto-layout, tokens) used by the full product team</li>
+            <li>Collaborating cross-functionally with stakeholders, PMs, and developers to translate abstract requirements into high-fidelity, developer-ready screens</li>
+            <li>Conducting usability testing, heuristic analysis, and competitive research to drive UX improvements</li>
+            <li>Ensuring W3C accessibility compliance across all interface components</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">
+          <div class="tl-date-range">Apr 2020 — Dec 2020</div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <div class="tl-company">Classy Workshop</div>
+          <div class="tl-role">Graphic Designer</div>
+          <ul class="tl-desc">
+            <li>Created brand identities, logos, and marketing materials for cosmetic, wine, and retail clients</li>
+            <li>Managed client briefs through to print-ready delivery; coordinated with printing services</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">
+          <div class="tl-date-range">Aug 2018 — Apr 2019</div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <div class="tl-company">Self-employed</div>
+          <div class="tl-role">Graphic Designer</div>
+          <ul class="tl-desc">
+            <li>Delivered branding and printed materials for local brands and small businesses</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">
+          <div class="tl-date-range">Nov 2017 — Jun 2018</div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <div class="tl-company">Nowy Styl Group</div>
+          <div class="tl-role">Graphic Designer</div>
+          <ul class="tl-desc">
+            <li>Created visual materials for social media, branding, and marketing promotions</li>
+            <li>Worked with the marketing department to support ongoing campaigns</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">
+          <div class="tl-date-range">Jul 2017 — Sep 2017</div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <div class="tl-company">AviaBrand LLC</div>
+          <div class="tl-role">Graphic Designer</div>
+          <ul class="tl-desc">
+            <li>Designed and prepared InDesign layouts for print publications</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label fade-up">Education</div>
+    <h2 class="section-title fade-up">Academic background</h2>
+    <div class="edu-grid fade-up">
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Graphic Design</div>
+        <div class="edu-school">Kharkiv State Academy of Design and Fine Arts</div>
+        <div class="edu-year">2013 – 2017</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Master of Organic Chemistry</div>
+        <div class="edu-school">V.N. Karazin Kharkiv National University</div>
+        <div class="edu-year">2007 – 2012</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Contact</div>
+      <h2 class="contact-title">Let's work<br><em>together</em></h2>
+      <p class="contact-sub">Open to Product Designer roles focused on B2B SaaS and enterprise products. If you're building something ambitious that needs strong UX thinking — let's talk.</p>
+      <div class="contact-links">
+        <a href="mailto:kovalena1990@gmail.com" class="btn btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          kovalena1990@gmail.com
+        </a>
+        <a href="https://t.me/OlenaStorozheva" target="_blank" class="btn btn-outline">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.286c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.935z"/></svg>
+          Telegram
+        </a>
+        <a href="https://www.linkedin.com/in/olena-storozheva-807948137" target="_blank" class="btn btn-outline">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-note">© 2025 Olena Storozheva · Product Designer</span>
+  <span class="footer-note">Built with care · Open to opportunities</span>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+
+// Close mobile menu on nav click
+document.querySelectorAll('.nav-mobile a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('nav-mobile').classList.remove('open'));
+});
+
+// IntersectionObserver fade-up
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
